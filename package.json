@@ -6,9 +6,19 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/server": "^11.10.0",
+    "@mantine/core": "^5.6.2",
+    "@mantine/hooks": "^5.6.2",
+    "@mantine/modals": "^5.6.2",
+    "@mantine/next": "^5.6.2",
+    "@mantine/notifications": "^5.6.2",
+    "animated-tailwindcss": "^3.3.0",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons": "^4.6.0",
+    "valtio": "^1.7.4"
   },
   "devDependencies": {
     "@types/node": "18.11.3",

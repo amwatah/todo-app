@@ -1,8 +1,38 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import { AppProps } from "next/app";
+import Head from "next/head";
+import { MantineProvider } from "@mantine/core";
+import { NotificationsProvider } from "@mantine/notifications";
+import { ModalsProvider } from "@mantine/modals";
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+export default function App(props: AppProps) {
+  const { Component, pageProps } = props;
+
+  return (
+    <>
+      <Head>
+        <title>Task Man</title>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+
+      <MantineProvider
+        withGlobalStyles
+        withNormalizeCSS
+        withCSSVariables
+        theme={{
+          /** Put your mantine theme override here */
+          colorScheme: "light",
+        }}
+      >
+        <NotificationsProvider position="bottom-left">
+          <ModalsProvider>
+            <Component {...pageProps} />
+          </ModalsProvider>
+        </NotificationsProvider>
+      </MantineProvider>
+    </>
+  );
 }
-
-export default MyApp
